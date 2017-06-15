@@ -1,0 +1,61 @@
+import React, { Component } from 'react';
+import logo from './logo.svg';
+import './App.css';
+
+import { fromJS } from 'immutable';
+
+class App extends Component {
+  static get namespace(){
+    return 'coinx-app';
+  }
+
+  static get actions(){
+    return {
+      setCoin: () =>({
+        network: {
+          handler: 'getXdata',
+          nextAction: { type: 'setXdata' },
+        },
+      }),
+    };
+  }
+
+  static get reducer(){
+    return {
+      setXdata: (subState, { payload }) => state.set('Xdata', payload),
+    }
+  }
+
+  static get initState(){
+    return fromJS({
+      Xdata: null,
+    });
+  }
+
+  componentWillMount(){
+    this.props.setCoin();
+  }
+  
+  render() {
+    const Xdata = this.props.subState.get('Xdata');
+
+    if ( Xdata === null ) return (<div> loading exchange... </div>);
+
+    const fCoin = [...Xdata.keys()];
+    
+    return (
+      <div className="App">
+        <p>from: {fCoin}</p>
+        {
+          Xdata.get(fCoin).keys().map(k => (
+            <p key={k}>
+              {k} - {Xdata.getIn([fCoin, k])}
+            </p>
+          ) )
+        }
+      </div>
+    );
+  }
+}
+
+export default App;
