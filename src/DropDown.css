@@ -1,0 +1,52 @@
+.dropDown {
+  width: 31vw;
+  position: absolute;
+  left: -5.5vw;
+  top: 13vw;
+}
+
+.dropbtn{
+  background: none;
+}
+
+.dropDown-content {
+  display: none;
+  position: absolute;
+  z-index: 1;
+  width: 40vw;
+  left: 10vw;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+
+.dropDown-content li {
+  text-decoration: none;
+  display: block;
+  width: 21vw;
+  height: 15px;
+  padding: 4px;
+  padding-top: 1.5vw;
+  padding-bottom: .5vw;
+  margin-left: 20vw;
+}
+
+.dropDown-content a:hover {
+  background-color: rgb(221, 221, 221);
+}
+
+.dropDown:hover .dropDown-content {
+  display: block;
+}
+
+.dropDown:hover .dropbtn {
+  background-color: rgb(221, 221, 221);
+
+}
+.dropDownLinkList{
+  list-style-type: none;
+  margin-left: -15vw;
+  border: 2px solid rgb(221, 221, 221);
+  border-radius: 5px;
+  width: 42vw;
+
+}
