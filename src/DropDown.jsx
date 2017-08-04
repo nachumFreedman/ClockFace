@@ -7,8 +7,8 @@ class DropDown extends Component{
     return(
       <div>
         <div className="dropDown">
-          <button className=" dropbtn "><FaAngleDown/></button>
-          <div className="dropDown-content btn btn-danger">
+          <button className="dropbtn "><FaAngleDown/></button>
+          <div className="dropDownList dropDown-content btn btn-danger">
             <ul className="dropDownLinkList">
               <li> <a timeZoneId="1" gmtAdjustment="GMT-12:00" useDaylightTime="0" value="-12">(GMT-12:00) International Date Line West</a></li>
               <li> <a timeZoneId="2" gmtAdjustment="GMT-11:00" useDaylightTime="0" value="-11">(GMT-11:00) Midway Island, Samoa</a></li>

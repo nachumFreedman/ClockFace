@@ -71,7 +71,6 @@ class Clock extends Component {
           </div>
           <div className='hourHand' style={{transform: 'rotate('+(6*(currentHours+30))+'deg)'}}>
           </div>
-
         </div>
       </div>
     );
